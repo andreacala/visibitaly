@@ -1,0 +1,25 @@
+return(
+
+
+
+if($_POST{'singolo-andataritorno'}=="Singolo")
+{
+
+
+
+
+}
+if($_POST{'singolo-andataritorno'}=="Andata e ritorno")
+{
+
+
+
+
+}
+
+
+
+
+
+
+$_POST{'adulti'}*10+$_POST{'bambini'}*1);

@@ -3,12 +3,12 @@
 		<legend>Passeggeri</legend> 
 	</div>
 	<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
-		<label> <i class="fontawesome-icon fas fa-users"> </i>Passeggeri totali <br />
-		[number* passeggeri-da min:1 max:8] </label> 
+		<label> <i class="fontawesome-icon fas fa-users"> </i>Adulti <br />
+		[number* adulti min:1 max:8] </label> 
 	</div>
 	<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
 		<label> <i class="fontawesome-icon fas fa-child"> </i>Bambini (fino 10 anni) <br />
-		[number bambini-da min:0 max:7] </label> 
+		[number* bambini min:0 max:7] </label> 
 	</div>
 </fieldset>
 <fieldset>
@@ -35,64 +35,352 @@
 [/group] 
 
 
-[group singolo-verso-aero] 
+[group singolo_verso_aero] 
 <div class="col-lg-12 col-md-12 col-sm-12">
 	<fieldset>
 		<div class="col-lg-12 col-md-12 col-sm-12">
-			<legend>Destinazione</legend>
+			<legend>Destinazione</legend> 
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-12 margin-bottom">
 			<label><i class="fontawesome-icon fas fa-location-arrow"></i> Aereoporto<br />
-			[select* singolo-aereo include_blank "Malpensa" "Orio al Serio"] </label>
+			[select* singolo-aereo include_blank "Malpensa" "Orio al Serio"] </label> 
 		</div>
-		</fieldset>
-		<fieldset>
+	</fieldset>
+	<fieldset>
 		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
 			<label><i class="fontawesome-icon fas fa-calendar"></i>Data<br />
-			[date* data-a] </label>
+			[date* data-a] </label> 
 		</div>
 		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
 			<label><i class="fontawesome-icon fas fa-clock-o"></i>Ora imbarco<br />
-			[time* ora-imbarco time-format:HH:mm]</label>
+			[time* ora-imbarco time-format:HH:mm]</label> 
 		</div>
 		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
 			<label><i class="fontawesome-icon fas fa-plane"></i>Volo n° <br />
-			[text* volo] </label>
+			[text* volo] </label> 
 		</div>
+	</fieldset>
+	<fieldset>
+		<legend> Partenza </legend> 
+		<div class="col-lg-3 col-md-3 col-sm-6 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-compass"></i>Indirizzo prelievo<br />
+			[text* indirizzo] </label> 
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-6 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-compass"></i>Comune<br />
+			[select* comune include_blank "Cinisello Balsamo" "Milano" "Sesto San Giovanni"] </label> 
+		</div>
+	</div>
+</fieldset>
+[/group] 
+
+
+[group singolo_verso_citta] 
+<div class="col-lg-12 col-md-12 col-sm-12">
+	<fieldset>
+		<div class="col-lg-12 col-md-12 col-sm-12">
+			<legend>Destinazione</legend> 
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-location-arrow"></i> Comune<br />
+			[select* singolo_comune include_blank "Milano" "Cinisello Balsamo" "Sesto San Giovanni"] </label> 
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-6 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-compass"></i>Indirizzo <br />
+			[text* singolo_indirizzo_destinazione] </label> 
+		</div>
+	</fieldset>
+	<fieldset>
+		
 		
 	</fieldset>
 	<fieldset>
-	<legend> Partenza </legend> 
-	<div class="col-lg-3 col-md-3 col-sm-6 margin-bottom">
-		<label><i class="fontawesome-icon fas fa-compass"></i>Indirizzo prelievo<br />
-		[text* indirizzo] </label>
+		<legend> Partenza  </legend> 
+		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-calendar"></i>Data<br />
+			[date* singolo_data] </label> 
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-clock-o"></i>Ora atterraggio<br />
+			[time* singolo_ora_imbarco time-format:HH:mm]</label> 
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-plane"></i>Volo n° <br />
+			[text* singolo_volo] </label> 
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-6 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-compass"></i>Aereoporto<br />
+			[select* singolo_aereoporto_partenza include_blank "Malpensa" "Orio Al Serio"] </label> 
+		</div>
 	</div>
-	<div class="col-lg-3 col-md-3 col-sm-6 margin-bottom">
-		<label><i class="fontawesome-icon fas fa-compass"></i>Comune<br />
-		[select* comune include_blank "Cinisello Balsamo" "Milano" "Sesto San Giovanni"] </label>
-	</div>
-</div>
 </fieldset>
-
-
 [/group] 
 
 
-[group singolo-verso-citta] 
-<div class="col-lg-12 col-md-12 col-sm-12">
-	<legend> Visibile se Singolo verso citta</legend> 
-</div>
-[/group] 
-
-
-[group andataritorno] 
+[group andata_ritorno] 
 <fieldset>
 	<div class="col-lg-12 col-md-12 col-sm-12">
 		<legend>Qual è la tratta?</legend> 
 	</div>
 	<div class="col-lg-12 col-md-12 col-sm-12 margin bottom">
 		<label> <i class="fontawesome-icon fas fa-thumbtack"> </i>Scegli tratta <br />
-		[select* ar-tratta include_blank "Aero->Città + Città->Aero" "Città->Aero + Aero->Città"] </label> 
+		[select* ar_tratta include_blank "Aero->Città + Città->Aero" "Città->Aero + Aero->Città"] </label> 
 	</div>
 </fieldset>
+
+[/group] 
+
+
+[group ar_citta_aereo]
+
+
+
+<div class="col-lg-12 col-md-12 col-sm-12">
+	<fieldset>
+		<div class="col-lg-12 col-md-12 col-sm-12">
+			<legend>Destinazione</legend> 
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-location-arrow"></i> Aereoporto<br />
+			[select* singolo-aereo include_blank "Malpensa" "Orio al Serio"] </label> 
+		</div>
+	</fieldset>
+	<fieldset>
+		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-calendar"></i>Data<br />
+			[date* data-a] </label> 
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-clock-o"></i>Ora imbarco<br />
+			[time* ora-imbarco time-format:HH:mm]</label> 
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-plane"></i>Volo n° <br />
+			[text* volo] </label> 
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend> Partenza </legend> 
+		<div class="col-lg-3 col-md-3 col-sm-6 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-compass"></i>Indirizzo prelievo<br />
+			[text* indirizzo] </label> 
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-6 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-compass"></i>Comune<br />
+			[select* comune include_blank "Cinisello Balsamo" "Milano" "Sesto San Giovanni"] </label> 
+		</div>
+	</div>
+</fieldset>
+
+_°_°_°_°_°_
+
+<div class="col-lg-12 col-md-12 col-sm-12">
+	<fieldset>
+		<div class="col-lg-12 col-md-12 col-sm-12">
+			<legend>Destinazione</legend> 
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-location-arrow"></i> Comune<br />
+			[select* singolo_comune include_blank "Milano" "Cinisello Balsamo" "Sesto San Giovanni"] </label> 
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-6 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-compass"></i>Indirizzo <br />
+			[text* singolo_indirizzo_destinazione] </label> 
+		</div>
+	</fieldset>
+	<fieldset>
+		
+		
+	</fieldset>
+	<fieldset>
+		<legend> Partenza  </legend> 
+		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-calendar"></i>Data<br />
+			[date* singolo_data] </label> 
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-clock-o"></i>Ora atterraggio<br />
+			[time* singolo_ora_imbarco time-format:HH:mm]</label> 
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-plane"></i>Volo n° <br />
+			[text* singolo_volo] </label> 
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-6 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-compass"></i>Aereoporto<br />
+			[select* singolo_aereoporto_partenza include_blank "Malpensa" "Orio Al Serio"] </label> 
+		</div>
+	</div>
+</fieldset>
+
+
+
+[/group]
+
+[group ar_aereo_citta]
+
+
+
+<div class="col-lg-12 col-md-12 col-sm-12">
+	<fieldset>
+		<div class="col-lg-12 col-md-12 col-sm-12">
+			<legend>Destinazione</legend> 
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-location-arrow"></i> Comune<br />
+			[select* singolo_comune include_blank "Milano" "Cinisello Balsamo" "Sesto San Giovanni"] </label> 
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-6 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-compass"></i>Indirizzo <br />
+			[text* singolo_indirizzo_destinazione] </label> 
+		</div>
+	</fieldset>
+	<fieldset>
+		
+		
+	</fieldset>
+	<fieldset>
+		<legend> Partenza  </legend> 
+		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-calendar"></i>Data<br />
+			[date* singolo_data] </label> 
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-clock-o"></i>Ora atterraggio<br />
+			[time* singolo_ora_imbarco time-format:HH:mm]</label> 
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-plane"></i>Volo n° <br />
+			[text* singolo_volo] </label> 
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-6 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-compass"></i>Aereoporto<br />
+			[select* singolo_aereoporto_partenza include_blank "Malpensa" "Orio Al Serio"] </label> 
+		</div>
+	</div>
+</fieldset>
+
+
+
+
+_°_°_°_°_
+
+
+<div class="col-lg-12 col-md-12 col-sm-12">
+	<fieldset>
+		<div class="col-lg-12 col-md-12 col-sm-12">
+			<legend>Destinazione</legend> 
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-location-arrow"></i> Aereoporto<br />
+			[select* singolo-aereo include_blank "Malpensa" "Orio al Serio"] </label> 
+		</div>
+	</fieldset>
+	<fieldset>
+		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-calendar"></i>Data<br />
+			[date* data-a] </label> 
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-clock-o"></i>Ora imbarco<br />
+			[time* ora-imbarco time-format:HH:mm]</label> 
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-plane"></i>Volo n° <br />
+			[text* volo] </label> 
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend> Partenza </legend> 
+		<div class="col-lg-3 col-md-3 col-sm-6 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-compass"></i>Indirizzo prelievo<br />
+			[text* indirizzo] </label> 
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-6 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-compass"></i>Comune<br />
+			[select* comune include_blank "Cinisello Balsamo" "Milano" "Sesto San Giovanni"] </label> 
+		</div>
+	</div>
+</fieldset>
+
+
+
+[/group]
+
+
+
+<fieldset>
+	<div class="col-lg-12 col-md-12 col-sm-12">
+		<legend>Prezzo</legend> 
+	</div>
+	<div class="col-lg-12 col-md-12 col-sm-12">
+		<label> [calculate_button "Calcola prezzo"] <br />
+		</label> 
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+		<label> Prezzo finale: € <br />
+		</label> 
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+		<label> [calculation totale "fn_php( return($_POST{'adulti'}*10+$_POST{'bambini'}*1);)"] <br />
+		</label> 
+	</div>
+</fieldset>
+<fieldset>
+	<div class="col-lg-12 col-md-12 col-sm-12">
+		<legend>Dati di contatto</legend>
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+		<label><i class="fontawesome-icon fas fa-user"></i> Nome<br />
+		[text* nome] </label>
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+		<label><i class="fontawesome-icon fas fa-user"></i> Cognome<br />
+		[text* cognome] </label>
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+		<label><i class="fontawesome-icon fas fa-phone"></i> Telefono <br />
+		[tel* telefono] </label>
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+		<label><i class="fontawesome-icon fas fa-envelope"></i> Email<br />
+		[email* email] </label>
+	</div>
+</fieldset>
+ 
+<div class="col-lg-12 col-md-12 col-sm-12 margin-bottom">
+	<label><i class="fontawesome-icon fas fa-envelope"></i> Richiedi fattura [checkbox fattura "Richiedi"]</label> 
+</div>
+
+
+
+[group fattura] 
+<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+	<label><i class="fontawesome-icon fas fa-user"></i> Ragione sociale<br />
+	[text* ragionesociale] </label>
+</div>
+<div class="col-lg-3 col-md-2 col-sm-12 margin-bottom">
+	<label><i class="fontawesome-icon fas fa-user"></i> P. IVA<br />
+	[text* piva] </label>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+	<label><i class="fontawesome-icon fas fa-user"></i> via<br />
+	[text* fvia] </label>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+	<label><i class="fontawesome-icon fas fa-user"></i> Città<br />
+	[text* fcitta] </label>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-3 margin-bottom">
+	<label><i class="fontawesome-icon fas fa-user"></i> Provincia<br />
+	[text* fprovincia] </label>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-3 margin-bottom">
+	<label><i class="fontawesome-icon fas fa-user"></i> CAP<br />
+	[text* fcap] </label>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-3 margin-bottom">
+	<label><i class="fontawesome-icon fas fa-user"></i> Nazione<br />
+	[text* fnazione] </label>
+</div>
 [/group]
