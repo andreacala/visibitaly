@@ -1,0 +1,88 @@
+<fieldset>
+	<div class="col-lg-12 col-md-12 col-sm-12">
+		<legend>Passeggeri</legend> 
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+		<label> <i class="fontawesome-icon fas fa-users"> </i>Passeggeri totali <br />
+		[number* passeggeri-da min:1 max:8] </label> 
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+		<label> <i class="fontawesome-icon fas fa-child"> </i>Bambini (fino 10 anni) <br />
+		[number bambini-da min:0 max:7] </label> 
+	</div>
+</fieldset>
+<fieldset>
+	<div class="col-lg-12 col-md-12 col-sm-12">
+		<legend>Viaggio singolo o Andata e ritorno?</legend> 
+	</div>
+	<div class="col-lg-12 col-md-12 col-sm-12 margin bottom">
+		<label> <i class="fontawesome-icon fas fa-thumbtack"> </i>scegli se singolo o andata e ritorno <br />
+		[select* singolo-andataritorno include_blank "Singolo" "Andata e ritorno"] </label> 
+	</div>
+</fieldset>
+[group singolo] 
+<fieldset>
+	<fieldset>
+		<div class="col-lg-12 col-md-12 col-sm-12">
+			<legend>Verso dove?</legend> 
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 margin bottom">
+			<label> <i class="fontawesome-icon fas fa-thumbtack"> </i>Scegli destinazione <br />
+			[select* singolo-destinazione include_blank "Aereoporto" "Città"] </label> 
+		</div>
+	</fieldset>
+</fieldset>
+[/group] 
+
+
+[group singolo-verso-aero] 
+<div class="col-lg-12 col-md-12 col-sm-12">
+	<legend> Visibile se singolo verso aero</legend> 
+	<fieldset>
+		<div class="col-lg-12 col-md-12 col-sm-12">
+			<legend>Informazioni di viaggio</legend>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-location-arrow"></i> Aereoporto<br />
+			[select* singolo-aereo include_blank "Malpensa" "Orio al Serio"] </label>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-calendar"></i>Data<br />
+			[date* data-a] </label>
+		</div>
+	</fieldset>
+	<fieldset>		
+		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-clock-o"></i>Ora imbarco<br />
+			[time* ora-imbarco time-format:HH:mm]</label>
+		</div>
+		</br>
+		<div class="col-lg-3 col-md-3 col-sm-12 margin-bottom">
+			<label><i class="fontawesome-icon fas fa-plane"></i>Volo n° <br />
+			[text* volo] </label>
+		</div>
+		
+	</fieldset>
+</div>
+
+[/group] 
+
+
+[group singolo-verso-citta] 
+<div class="col-lg-12 col-md-12 col-sm-12">
+	<legend> Visibile se Singolo verso citta</legend> 
+</div>
+[/group] 
+
+
+[group andataritorno] 
+<fieldset>
+	<div class="col-lg-12 col-md-12 col-sm-12">
+		<legend>Qual è la tratta?</legend> 
+	</div>
+	<div class="col-lg-12 col-md-12 col-sm-12 margin bottom">
+		<label> <i class="fontawesome-icon fas fa-thumbtack"> </i>Scegli tratta <br />
+		[select* ar-tratta include_blank "Aero->Città + Città->Aero" "Città->Aero + Aero->Città"] </label> 
+	</div>
+</fieldset>
+[/group]
